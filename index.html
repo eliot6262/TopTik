@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TikTop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0; background: #eee; color: #222;
+      display: flex; flex-direction: column; min-height: 100vh;
+    }
+    header {
+      background: #333; color: white;
+      padding: 1em 2em;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+    }
+    main {
+      flex: 1;
+      padding: 2em;
+      max-width: 1200px;
+      margin: auto;
+      width: 100%;
+    }
+    .home-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      margin-top: 4em;
+    }
+    button {
+      font-size: 1.5rem;
+      padding: 1em 2em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #333;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #555;
+    }
+    section {
+      background: white;
+      padding: 2em;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 3em;
+    }
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5em;
+      font-weight: bold;
+    }
+    p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+    }
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 2em;
+    }
+    .product {
+      flex: 1 1 300px;
+      background-color: #f9f9f9;
+      padding: 1em;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+    }
+    .product img {
+      max-height: 180px;
+      width: auto;
+      margin-bottom: 1em;
+      border-radius: 8px;
+      background-color: #fff;
+      object-fit: contain;
+    }
+    .product h3 {
+      margin-top: 0;
+    }
+    .product ul {
+      padding-left: 1.2em;
+      margin-bottom: 1em;
+    }
+    .product ul li {
+      margin-bottom: 0.4em;
+    }
+    .btn {
+      margin-top: auto;
+      display: inline-block;
+      background-color: #333;
+      color: #fff;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 1em;
+      background: #222;
+      color: white;
+      border-radius: 0 0 12px 12px;
+    }
+    a.footer-link {
+      color: #ffa;
+      text-decoration: none;
+    }
+    a.footer-link:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .product-list {
+        flex-direction: column;
+      }
+      .product {
+        flex: 1 1 100%;
+      }
+      .home-buttons {
+        flex-direction: column;
+        gap: 1em;
+        max-width: 300px;
+        margin: 4em auto 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header id="logo">TikTop</header>
+
+<main> 
+  <!-- Accueil -->
+  <div id="home">
+    <!-- Phrase d'accroche -->
+    <p style="text-align: center; font-size: 1.5rem; font-weight: bold; color: #333; margin-top: 1em; margin-bottom: 1em;">
+      Des bons plans, pas de blabla !
+    </p>
+
+    <div class="home-buttons" style="margin-bottom: 2em;">
+      <button id="btn-produits">Produits</button>
+      <button id="btn-contact">Contact</button>
+    </div>
+
+    <h2>Exemples de Produits</h2>
+    <div class="examples" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 1000px; margin: 0 auto;">
+      <div class="product-card" style="background: white; border-radius: 10px; box-shadow: 0 2px 8px rgb(0 0 0 / 0.1); width: 280px; padding: 1em; text-align: left;">
+        <img src="https://m.media-amazon.com/images/I/71n1PHdM5sL._AC_SL1500_.jpg" alt="Poêle Tefal Antiadhésive" style="width: 100%; height: 180px; object-fit: contain; border-radius: 8px; margin-bottom: 1em;">
+        <h3>Blender Mixeur Multifonction</h3>
+        <p>Idéal pour smoothies, soupes et sauces. Puissant et facile d’utilisation.</p>
+        <a href="https://amzn.to/4fgpl4a" target="_blank" style="background-color: #333; color: white; padding: 0.5em 1em; border-radius: 5px; text-decoration: none; font-weight: bold;">Voir sur Amazon</a>
+      </div>
+
+      <div class="product-card" style="background: white; border-radius: 10px; box-shadow: 0 2px 8px rgb(0 0 0 / 0.1); width: 280px; padding: 1em; text-align: left;">
+        <img src="https://m.media-amazon.com/images/I/61kzWh4dAML._AC_SL1164_.jpg" alt="Logitech Webcam C922 Pro" style="width: 100%; height: 180px; object-fit: contain; border-radius: 8px; margin-bottom: 1em;">
+        <h3>Logitech Webcam C922 Pro</h3>
+        <p>Webcam Full HD, autofocus rapide, idéale pour streaming et visioconférences.</p>
+        <a href="https://amzn.to/46Og7dh" target="_blank" style="background-color: #333; color: white; padding: 0.5em 1em; border-radius: 5px; text-decoration: none; font-weight: bold;">Voir sur Amazon</a>
+      </div>
+
+      <div class="product-card" style="background: white; border-radius: 10px; box-shadow: 0 2px 8px rgb(0 0 0 / 0.1); width: 280px; padding: 1em; text-align: left;">
+        <img src="https://m.media-amazon.com/images/I/81eRHFrPI4L._AC_SL1500_.jpg" alt="Blender Mixeur Multifonction" style="width: 100%; height: 180px; object-fit: contain; border-radius: 8px; margin-bottom: 1em;">
+        <h3>Couteau de Chef Professionnel</h3>
+        <p>Tranchant parfait et prise en main ergonomique pour préparer tes ingrédients facilement.</p>
+        <a href="https://amzn.to/4f660lS" target="_blank" style="background-color: #333; color: white; padding: 0.5em 1em; border-radius: 5px; text-decoration: none; font-weight: bold;">Voir sur Amazon</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+  <!-- Produits -->
+  <div id="produits" style="display:none;">
+
+    <!-- Setup Cuisine Pas Cher -->
+    <section id="cuisine-setup">
+
+      <div style="text-align: center; margin: 1.5em 0;">
+        <button id="btn-retour-accueil" style="padding: 0.75em 1.5em; background-color: #357ABD; color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 1rem; cursor: pointer;">
+          🏠 Retour à l'accueil
+        </button>
+      </div>
+
+      <h2>🍳 Ustensiles Cuisine Pas Cher – Bien débuter sans se ruiner</h2>
+      <p>Voici une sélection de produits abordables et efficaces pour bien équiper ta cuisine sans exploser ton budget. Tous testés et approuvés !</p>
+
+      <div class="product-list">
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71n1PHdM5sL._AC_SL1500_.jpg" alt="Poêle Tefal Antiadhésive" />
+          <h3>Blender Mixeur Multifonction</h3>
+          <p>Idéal pour smoothies, soupes, et sauces maison. Puissant et facile à utiliser.</p>
+          <ul>
+            <li>✔️ Plusieurs vitesses réglables</li>
+            <li>✔️ Lames en acier inoxydable</li>
+            <li>✔️ Nettoyage facile</li>
+          </ul>
+          <a href="https://amzn.to/4fgpl4a" target="_blank" class="btn">Voir sur Amazon</a>
+        </div>
+
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/81eRHFrPI4L._AC_SL1500_.jpg" alt="Blender Mixeur Multifonction" />
+          <h3>Couteau de Chef Professionnel</h3>
+          <p>Tranchant parfait et prise en main ergonomique pour préparer tes ingrédients facilement.</p>
+          <ul>
+            <li>✔️ Lame en acier inoxydable</li>
+            <li>✔️ Manche antidérapant</li>
+            <li>✔️ Durable et résistant</li>
+          </ul>
+          <a href="https://amzn.to/4f660lS" target="_blank" class="btn">Voir sur Amazon</a>
+        </div>
+
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/818W358zfyL._SL1500_.jpg" alt="Robot Cuiseur Multifonctions" />
+          <h3>Balance de Cuisine Digitale</h3>
+          <p>Précision et facilité pour doser tes ingrédients avec exactitude à chaque recette.</p>
+          <ul>
+            <li>✔️ Capacité jusqu’à 5 kg</li>
+            <li>✔️ Écran LCD clair</li>
+            <li>✔️ Fonction tare pratique</li>
+          </ul>
+          <a href="https://amzn.to/3H9gtAx" target="_blank" class="btn">Voir sur Amazon</a>
+        </div>
+
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61RmClrCRWL._AC_SL1500_.jpg" alt="Couteau de Chef Professionnel" />
+          <h3>Wenrescry – Lot de 12 ustensiles de cuisine en silicone</h3>
+          <p>Ce set complet regroupe tout ce qu’il faut pour cuisiner efficacement au quotidien. Il allie praticité, sécurité et design élégant, parfait pour équiper sa cuisine sans se tromper.</p>
+          <ul>
+            <li>✔️ Résistants à la chaleur (jusqu’à 230 °C)</li>
+            <li>✔️ Silicone alimentaire sans BPA</li>
+            <li>✔️ Nettoyage facile</li>
+          </ul>
+          <a href="https://amzn.to/4l0LlkG" target="_blank" class="btn">Voir sur Amazon</a>
+        </div>
+
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61XSiV0x3fL._AC_SL1500_.jpg" alt="Balance de Cuisine Digitale" />
+          <h3>Singhere Moulin à sel et poivre électrique</h3>
+          <p>Un moulin moderne et pratique qui facilite l’assaisonnement grâce à sa motorisation rechargeable. Compact et élégant, il permet de moudre rapidement poivre, sel, et autres épices, sans effort.</p>
+          <ul>
+            <li>✔️ Rechargeable par USB</li>
+            <li>✔️ Corps en acier inoxydable</li>
+            <li>✔️ Éclairage LED intégré</li>
+          </ul>
+          <a href="https://amzn.to/4m9gC5Q" target="_blank" class="btn">Voir sur Amazon</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Setup Gaming Pas Cher -->
+    <section id="gaming-setup">
+      <h2>🎮 Setup Gaming Pas Cher – Bien débuter sans se ruiner</h2>
+      <p>Voici une sélection de produits abordables et efficaces pour commencer ton aventure gaming ou streaming sans exploser ton budget. Tous testés et approuvés !</p>
+
+      <div class="product-list">
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/71-0d2CTMML._AC_SL1500_.jpg" alt="Beyerdynamic DT 990 PRO" />
+          <h3>Beyerdynamic DT 990 PRO</h3>
+          <p>Un casque studio ouvert très confortable avec un son clair et précis. Idéal pour le gaming longue durée et le streaming. Excellent rapport qualité/prix.</p>
+          <ul>
+            <li>✔️ Qualité audio exceptionnelle</li>
+            <li>✔️ Très confortable pour les longues sessions</li>
+            <li>✔️ Bonne spatialisation pour les FPS</li>
+          </ul>
+          <a href="https://amzn.to/4ob8eEH" target="_blank" class="btn">Voir sur Amazon</a>
+        </div>
+
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61gtdFnK+UL._AC_SL1500_.jpg" alt="Elgato Stream Deck MK.2" />
+          <h3>Elgato Stream Deck MK.2</h3>
+          <p>Contrôle total de ton stream ou de ton PC avec ses touches personnalisables. Gain de temps énorme et outil préféré des streamers pros.</p>
+          <ul>
+            <li>✔️ 15 touches personnalisables</li>
+            <li>✔️ Idéal pour Twitch, YouTube, OBS, etc.</li>
+            <li>✔️ Interface simple et rapide</li>
+          </ul>
+          <a href="https://amzn.to/453LSfB" target="_blank" class="btn">Voir sur Amazon</a>
+        </div>
+
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61EZnm+ijZL._AC_SL1500_.jpg" alt="Micro TONOR USB/XLR" />
+          <h3>TONOR Micro USB/XLR + Bras</h3>
+          <p>Un micro solide et clair, parfait pour les débuts en stream ou en podcast. Livré avec bras articulé et filtre anti-pop pour un rendu pro.</p>
+          <ul>
+            <li>✔️ Compatible USB et XLR</li>
+            <li>✔️ Bras de support inclus</li>
+            <li>✔️ Son clair et bien équilibré</li>
+          </ul>
+          <a href="https://amzn.to/459jIQq" target="_blank" class="btn">Voir sur Amazon</a>
+        </div>
+
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/91vvx2d408L._AC_SL1500_.jpg" alt="FIFINE Audio Mixer" />
+          <h3>FIFINE Gaming Audio Mixer</h3>
+          <p>Contrôle ton micro et ton son en temps réel. Idéal pour ajuster tes volumes pendant les streams ou calls. Simple, compact, et efficace.</p>
+          <ul>
+            <li>✔️ Boutons physiques pour le volume</li>
+            <li>✔️ Compatible USB plug & play</li>
+            <li>✔️ Bonne qualité de fabrication</li>
+          </ul>
+          <a href="https://amzn.to/40AESFN" target="_blank" class="btn">Voir sur Amazon</a>
+        </div>
+
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/61kzWh4dAML._AC_SL1164_.jpg" alt="Logitech Webcam C922 Pro" />
+          <h3>Logitech Webcam C922 Pro</h3>
+          <p>Une webcam Full HD parfaite pour streamer avec une belle image. Autofocus rapide, bonne gestion de la lumière, facile à utiliser.</p>
+          <ul>
+            <li>✔️ Vidéo 1080p fluide à 30 fps</li>
+            <li>✔️ Autofocus rapide et précis</li>
+            <li>✔️ Bonne qualité même en faible lumière</li>
+          </ul>
+          <a href="https://amzn.to/46Og7dh" target="_blank" class="btn">Voir sur Amazon</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<div id="contact" style="display: none;">
+  <section id="contact" style="text-align: center; padding: 2em; background-color: #f5f5f5;">
+
+    <div style="max-width: 700px; margin: auto;">
+      <p style="font-size: 1.2rem; line-height: 1.6; color: #333; margin-bottom: 2em;">
+        Bienvenue sur mon site ! Ici, je partage avec vous une sélection d'objets du quotidien que j’ai personnellement choisis, testés ou approuvés. Mon but ? Vous faire gagner du temps et éviter les mauvaises surprises en vous conseillant uniquement ce qui vaut vraiment le coup.<br><br>
+        Que ce soit pour la maison, le bureau, les loisirs ou la vie de tous les jours, je vous propose des produits utiles, fiables, et accessibles. Pas de blabla, pas de pub déguisée : juste des recommandations honnêtes basées sur l’expérience et le bon sens.<br><br>
+        Explorez, découvrez. Bonne visite !
+      </p>
+
+      <!-- Bouton YouTube -->
+      <a href="https://www.youtube.com/channel/UClrJnHQtFSRvFyijU36l-ag" target="_blank" 
+         style="display: inline-block; background-color: #FF0000; color: white; padding: 0.75em 1.5em; 
+                font-weight: bold; border-radius: 6px; text-decoration: none; font-size: 1.2rem;">
+        🔴 Visite notre chaîne YouTube
+      </a>
+
+      <h2 style="margin-top: 2em; margin-bottom: 0.5em;">TopTik</h2>
+      <p style="font-size: 1.1rem; color: #555;">Retrouve toutes les vidéos présentation sur notre chaîne YouTube</p>
+
+      <!-- Bouton Accueil (après le contenu YouTube) -->
+      <div style="margin-top: 2em;">
+        <button id="btn-accueil" 
+          style="background-color: #333; color: white; padding: 0.75em 1.5em; 
+                 font-weight: bold; border-radius: 6px; border: none; cursor: pointer; 
+                 font-size: 1rem;">
+          🏠 Accueil
+        </button>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+  
+  
+
+<footer>
+  &copy; 2025 TikTop
+</footer>
+
+<script>
+  const homeDiv = document.getElementById('home');
+  const produitsDiv = document.getElementById('produits');
+  const contactDiv = document.getElementById('contact');
+  const btnProduits = document.getElementById('btn-produits');
+  const btnContact = document.getElementById('btn-contact');
+  const logo = document.getElementById('logo');
+
+  function showHome() {
+    homeDiv.style.display = 'block';
+    produitsDiv.style.display = 'none';
+    contactDiv.style.display = 'none';
+  }
+
+  function showProduits() {
+    homeDiv.style.display = 'none';
+    produitsDiv.style.display = 'block';
+    contactDiv.style.display = 'none';
+  }
+
+  function showContact() {
+    homeDiv.style.display = 'none';
+    produitsDiv.style.display = 'none';
+    contactDiv.style.display = 'block';
+  }
+
+  btnProduits.addEventListener('click', showProduits);
+  btnContact.addEventListener('click', showContact);
+  logo.addEventListener('click', showHome);
+</script>
+
+<script>
+  // Navigation boutons
+  document.getElementById("btn-produits").addEventListener("click", function () {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("produits").style.display = "block";
+    document.getElementById("contact").style.display = "none";
+  });
+
+  document.getElementById("btn-contact").addEventListener("click", function () {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("produits").style.display = "none";
+    document.getElementById("contact").style.display = "block";
+  });
+
+  // Bouton Accueil (depuis contact)
+  document.getElementById("btn-accueil").addEventListener("click", function () {
+    document.getElementById("home").style.display = "block";
+    document.getElementById("produits").style.display = "none";
+    document.getElementById("contact").style.display = "none";
+  });
+</script>
+
+<script>
+  document.getElementById("btn-retour-accueil").addEventListener("click", function () {
+    document.getElementById("home").style.display = "block";
+    document.getElementById("produits").style.display = "none";
+    document.getElementById("contact").style.display = "none";
+  });
+</script>
+
+</body>
+</html>
